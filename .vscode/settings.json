@@ -1,0 +1,23 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.enable": true,
+  "eslint.run": "onType",
+  "eslint.packageManager": "yarn",
+  "eslint.alwaysShowStatus": true,
+  "eslint.workingDirectories": [
+    "./src"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": false
+  },
+  "workbench.editor.enablePreview": false,
+  // 因为 Beautify 插件有时保存的效果不理想（在 TSX 中），所以在该项目中禁用先
+  "editor.formatOnSave": false,
+  "gitlens.codeLens.enabled": false
+}
