@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { RouteComponentProps } from '@reach/router'
+import { ArticlesFragment } from './ArticlesFragment'
 
 type Props = {
   // ignore
@@ -11,6 +12,7 @@ export const ProjectPage = (props: Props) => {
   return (
     <div>
       项目
+      <ArticlesFragment />
     </div>
   )
 }

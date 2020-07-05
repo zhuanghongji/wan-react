@@ -8,6 +8,7 @@ import { userArticleListReducer } from './apis/user-article-list'
 import { wenDaListReducer } from './apis/wenda-list'
 import { treeListReducer } from './apis/tree'
 import { articleListByCidReducer } from './apis/article-list-by-cid'
+import { projectList } from './apis/project-list'
 
 const logger = createLogger()
 const rootReducer = combineReducers({
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   wenDaList: wenDaListReducer,
   treeList: treeListReducer,
   articleListByCid: articleListByCidReducer,
+  projectList,
 })
 
 export type RootState = ReturnType<typeof rootReducer>
