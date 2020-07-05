@@ -5,26 +5,43 @@ import { useRequest } from 'ahooks'
 import { requestArticleList } from "../../../http"
 import { ArticleItem } from "./ArticleItem"
 import styled from "styled-components"
+import { useRootSelector } from "../../../hooks"
+import { useDispatch } from "react-redux"
+import { setArticleList } from "../../../redux/apis/article-list"
 
 const Container = styled.div`
   background-color: white;
 `
 
 export const ArticlesFragment = React.memo(() => {
+  // const {
+  //   data: articles,
+  //   error,
+  //   loading,
+  // } = useRequest(requestArticleList, {
+  //   formatResult: result => result.datas,
+  //   defaultParams: [{ pageNum: 0 }],
+  // })
+
   const {
     data: articles,
-    error,
-    loading,
-  } = useRequest(requestArticleList, {
-    formatResult: result => result.datas,
-    defaultParams: [{ pageNum: 0 }],
-  })
-
-  // const [count, setCount] = useState(0)
+  } = useRootSelector(state => state.articleList)
+  // const {  } = aaa.
+  const dispatch = useDispatch()
 
   useEffect(() => {
     console.log('aaaa')
+    onLoad()
   }, [])
+
+  const onLoad = async () => {
+    try {
+      const list = await requestArticleList({ pageNum: 0 })
+      dispatch(setArticleList(list.datas))
+    } catch(e) {
+      // igonre
+    }
+  }
 
   return (
     <Container>
