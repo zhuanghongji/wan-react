@@ -1,4 +1,4 @@
-import { Article, BaseResult, BaseList } from '../common'
+import { Article, BaseResult } from '../common'
 import { httpGet } from '../http-manager'
 
 export type Navi = {
