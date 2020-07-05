@@ -14,8 +14,8 @@ export type HttpGetOptions = {
 export async function httpGet<T>(options: HttpGetOptions): Promise<T> {
   try {
     const { path } = options
-    const result = await instance.get<BaseResult<T>>(path)
-    return result.data.data
+    const resp = await instance.get<T>(path)
+    return resp.data
   } catch (e) {
     return Promise.reject(e)
   }
