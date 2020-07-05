@@ -8,7 +8,7 @@ import { MainPage } from './pages/main'
 import { HomePage } from './pages/main/home'
 import { SquarePage } from './pages/main/square'
 import { NaviPage } from './pages/main/navi'
-import { QAPage } from './pages/main/qa'
+import { WenDaPage } from './pages/main/wenda'
 import { TreePage } from './pages/main/tree'
 import { ProjectPage } from './pages/main/project'
 import { MPPage } from './pages/main/mp'
@@ -24,7 +24,7 @@ export const App = () => {
             <HomePage path="/" />
             <SquarePage path="/square" />
             <NaviPage path="/navi" />
-            <QAPage path="/qa" />
+            <WenDaPage path="/wenda" />
             <TreePage path="/tree" />
             <ProjectPage path="/project" />
             <MPPage path="/mp" />

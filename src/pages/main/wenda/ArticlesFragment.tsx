@@ -1,31 +1,30 @@
-/* eslint-disable no-console */
 import React, { useEffect } from 'react'
-import { requestUserArticleList } from '../../../http'
+import { requestWenDaList } from '../../../http'
 import { ArticleItem } from './ArticleItem'
 import styled from 'styled-components'
 import { useRootSelector } from '../../../hooks'
 import { useDispatch } from 'react-redux'
-import { setUserArticleList } from '../../../redux'
+import { setWenDaList } from '../../../redux'
 
 const Container = styled.div`
   background-color: white;
 `
 
 export const ArticlesFragment = React.memo(() => {
+
   const {
     data: articles,
-  } = useRootSelector(state => state.userArticleList)
+  } = useRootSelector(state => state.wenDaList)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    console.log('aaaa')
     onLoad()
   }, [])
 
   const onLoad = async () => {
     try {
-      const list = await requestUserArticleList({ pageNum: 0 })
-      dispatch(setUserArticleList(list.datas))
+      const list = await requestWenDaList({ pageNum: 0 })
+      dispatch(setWenDaList(list.datas))
     } catch(e) {
       // igonre
     }

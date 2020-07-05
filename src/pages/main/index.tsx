@@ -25,7 +25,7 @@ export const MainPage = (props: PropsWithChildren<Props>) => {
             <Link to="/navi">导航</Link>
           </Menu.Item>
           <Menu.Item key="4">
-            <Link to="/qa">问答</Link>
+            <Link to="/wenda">问答</Link>
           </Menu.Item>
           <Menu.Item key="5">
             <Link to="/tree">体系</Link>
